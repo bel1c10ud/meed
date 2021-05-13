@@ -1,0 +1,49 @@
+.area {
+  display: inline-block;
+  width: 509px;
+  height: 219px;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 30px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255,1);
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 5%);
+}
+
+.title,
+.rank1to5,
+.rank5to10 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.rank1to5,
+.rank5to10 {
+  padding: 5px 0;
+}
+
+.title {
+  width: 130px;
+  height: 219px;
+  line-height: 219px;
+  border-radius: 10px 0 0 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  background-color: rgba(0, 205, 60, 1);
+  color: rgba(255, 255, 255, 1);
+  vertical-align: middle;
+}
+
+.titleWrap {
+  display: inline-block;
+}
+
+.titleWrap .logo,
+.titleWrap .name {
+  line-height: initial;
+}
+
+.logo > img {
+  width: 100px;
+  display: block;
+}

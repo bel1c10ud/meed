@@ -1,0 +1,62 @@
+.area {
+  display: block;
+  height: 32px;
+  /* width: 200px; */
+  margin: 8px 0;
+}
+
+.rank,
+.albumArt,
+.trackInfo,
+.area audio {
+  display: inline-block;
+  line-height: 32px;
+  vertical-align: middle;
+}
+
+.rank {
+  width: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(0, 205, 60, 1);
+  text-align: right;
+  margin-right: 20px;
+}
+
+.rank > div {
+  display: inline-block;
+  line-height: initial;
+}
+
+.albumArt {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.albumArt > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.trackInfo {
+  width: 120px;
+}
+
+.trackInfo .title,
+.trackInfo .artist {
+  font-size: 0.75rem;
+  line-height: initial;
+  /* line-height: 120%; */
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.trackInfo .artist {
+  color: rgba(0, 0, 0, 0.5);
+}
+.trackInfo .artist span {
+  margin-right: 5px;
+}

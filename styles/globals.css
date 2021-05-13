@@ -1,8 +1,10 @@
+@import url('spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -13,4 +15,16 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+:root {
+  --card-border-radius: 10px;
+  --card-info-padding: 15px;
+  --card-playButton-size: 50px;
+  --card-background-color: rgba(110, 110, 110, 0.25);
+  --card-text-shadow: 0 0 0px rgba(0, 0, 0, 0);
 }

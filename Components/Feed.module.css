@@ -1,0 +1,9 @@
+.area {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.area > * {
+  vertical-align: top;
+  /* margin-right: 24px; */
+}

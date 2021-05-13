@@ -8,8 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.17",
+    "apollo-server-micro": "^2.24.0",
+    "axios": "^0.21.1",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "next": "10.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "recoil": "^0.2.0",
+    "spoqa-han-sans": "^3.2.1",
+    "swr": "^0.5.6"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.5",
+    "typescript": "^4.2.4"
   }
 }

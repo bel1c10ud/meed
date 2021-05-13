@@ -1,0 +1,59 @@
+.area {
+  display: inline-block;
+  width: 364px;
+  height: 219px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255,1);
+  overflow: hidden;
+}
+
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
+}
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background-color: var(--card-background-color);
+  text-shadow: var(--card-text-shadow);
+}
+
+.info .title {
+  font-size: 1rem;
+}
+
+.info .artist {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.playButton {
+  position: absolute;
+  top: calc(50% - (var(--card-playButton-size) / 2));
+  left: calc(50% - (var(--card-playButton-size) / 2));
+  width: var(--card-playButton-size);
+  height: var(--card-playButton-size);
+  border: 0;
+  background: none;
+  color: rgba(255, 255, 255, 1);
+}
