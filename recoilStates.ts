@@ -17,7 +17,8 @@ export const playerState = atom<PlayerState>({
     volume: 10,
     currentTime: 0,
     previewDuration: 30.040816,
-    isLoop: false
+    isLoop: false,
+    isShuffle: false
   }
 });
 
@@ -41,12 +42,20 @@ export const playbackStringState = selector({
 export const playlistState = atom<Playlist>({
   key: "playlistState",
   default: {
-    playingId: 0,
-    tracks: []
+    playingId: undefined,
+    playedIds: [],
+    tracks: [],
   }
 })
 
 export const playingTrackState = atom<Track|undefined>({
   key: "playingTrackState",
   default: undefined
+})
+
+export const feedState = atom({
+  key: "feedState",
+  default: {
+    feedType: "MY"
+  }
 })

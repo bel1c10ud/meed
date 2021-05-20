@@ -1,46 +1,60 @@
 .area {
   display: inline-block;
-  width: 509px;
   height: 219px;
   overflow: hidden;
   white-space: nowrap;
-  padding-right: 30px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255,1);
-  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 5%);
+  box-shadow: var(--card-box-shadow);
 }
 
-.title,
-.rank1to5,
-.rank5to10 {
+.label,
+.rank,
+.rankWrap {
   display: inline-block;
   vertical-align: top;
 }
 
-.rank1to5,
-.rank5to10 {
-  padding: 5px 0;
+.rank {
+  margin: 5px 30px 5px 0;
+  overflow-x: hidden;
+}
+.rankWrap {
+  /* padding: 5px 0; */
 }
 
-.title {
+.label {
   width: 130px;
   height: 219px;
   line-height: 219px;
   border-radius: 10px 0 0 10px;
   font-size: 0.8rem;
   text-align: center;
-  background-color: rgba(0, 205, 60, 1);
+  background-color: var(--chart-label-color);
   color: rgba(255, 255, 255, 1);
   vertical-align: middle;
 }
 
+.anchor {
+  height: 100%;
+  width: 0px;
+}
+
+.anchor,
 .titleWrap {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .titleWrap .logo,
 .titleWrap .name {
   line-height: initial;
+  height: 30px;
+}
+
+.titleWrap .name {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
 }
 
 .logo > img {

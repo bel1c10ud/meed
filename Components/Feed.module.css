@@ -1,9 +1,42 @@
 .area {
   width: 1140px;
   margin: 0 auto;
+  margin-bottom: 100px;
+  padding-bottom: 30px;
 }
 
 .area > * {
   vertical-align: top;
-  /* margin-right: 24px; */
 }
+
+.row {
+  margin-bottom: 24px;
+}
+
+.row > * {
+  margin-right: 24px;
+  vertical-align: top;
+}
+
+.row > *:last-of-type {
+  margin-right: 0;
+}
+
+.feedTypes {
+  margin-bottom: 10px;
+}
+
+.feedTypes > .feedType {
+  display: inline-block;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.feedTypes > .ActiveFeedType {
+  border-bottom: 2px solid rgba(213, 214, 118, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+/* .feedTypes > .feedType:last-of-type {} */

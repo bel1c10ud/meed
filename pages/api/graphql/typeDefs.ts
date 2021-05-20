@@ -46,14 +46,25 @@ export const typeDefs: DocumentNode = gql`
     items: [PlaylistItem]
   }
 
+  type PlaylistOwner {
+    display_name: String
+  }
+
   type Playlist {
     id: String
     name: String
     tracks: PlaylistTracks
+    images: [Image]
+    owner: PlaylistOwner
+  }
+
+  type MelonAlbumData {
+    description: String
   }
 
   type Query {
     getTrack(id: String!): Track
     getPlaylist(id: String!): Playlist
     getAlbum(id: String!): Album
+    getMelonAlbumData(id: String!): MelonAlbumData
 }`

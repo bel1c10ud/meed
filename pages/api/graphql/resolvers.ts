@@ -1,5 +1,6 @@
 import { Resolvers } from '@apollo/client';
 import axios from 'axios';
+import cheerio from 'cheerio';
 import { GraphQLArgs, GraphQLArgument, GraphQLFieldConfigArgumentMap, GraphQLFieldResolver, GraphQLResolveInfo } from 'graphql';
 import { GraphQLRequestContext } from 'graphql-request/dist/types';
 import { GraphQLParseOptions, IResolvers } from 'graphql-tools';
@@ -15,7 +16,8 @@ export const resolvers: IResolvers = {
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${response.data.access_token}`
+          "Authorization": `Bearer ${response.data.access_token}`,
+          "Accept-Language": "KO"
         },
         params: {
           market: "KR"
@@ -33,7 +35,8 @@ export const resolvers: IResolvers = {
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${response.data.access_token}`
+          "Authorization": `Bearer ${response.data.access_token}`,
+          "Accept-Language": "KO"
         },
         params: {
           market: "KR"
@@ -51,7 +54,8 @@ export const resolvers: IResolvers = {
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${response.data.access_token}`
+          "Authorization": `Bearer ${response.data.access_token}`,
+          "Accept-Language": "KO"
         },
         params: {
           market: "KR"
@@ -59,6 +63,13 @@ export const resolvers: IResolvers = {
       });
       console.log(data);
       return data;
+    },
+    getMelonAlbumData: async (parent: GraphQLParseOptions, args: GraphQLFieldConfigArgumentMap, context: GraphQLRequestContext, info: GraphQLResolveInfo) => {
+      const { data } = await axios.get(`https://www.melon.com/album/detail.htm?albumId=${args.id}`);
+      const $ = cheerio.load(data);
+      return {
+        description: $('.dtl_albuminfo').text().trim().replace(/\t/g, "\n")
+      }
     }
   }
 };

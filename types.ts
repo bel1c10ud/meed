@@ -46,9 +46,18 @@ export interface PlayerState {
   currentTime: number;
   previewDuration: number;
   isLoop: boolean;
+  isShuffle: boolean;
 }
 
 export interface Playlist {
-  playingId: number;
+  playingId: number|undefined;
+  playedIds: number[];
   tracks: string[];
+}
+
+export interface ChartInfo {
+  logo: string,
+  name: string,
+  labelColor: string,
+  textColor: string,
 }

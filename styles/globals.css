@@ -24,7 +24,11 @@ p {
 :root {
   --card-border-radius: 10px;
   --card-info-padding: 15px;
-  --card-playButton-size: 50px;
-  --card-background-color: rgba(110, 110, 110, 0.25);
-  --card-text-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  --card-playButton-size: 72px;
+  --card-background-color: rgba(0, 0, 0, 0.25);
+  --card-text-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  --card-box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 5%);
+  --card-hover-transition: 100ms ease-in;
+  --card-hover-default-opacify: 0.25;
+  --card-hover-opacify: 0.875;
 }

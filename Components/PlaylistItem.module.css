@@ -18,7 +18,7 @@
   width: 30px;
   font-size: 1rem;
   font-weight: 500;
-  color: rgba(0, 205, 60, 1);
+  color: var(--chart-text-color);
   text-align: right;
   margin-right: 20px;
 }
@@ -41,7 +41,7 @@
 }
 
 .trackInfo {
-  width: 120px;
+  width: 90px;
 }
 
 .trackInfo .title,

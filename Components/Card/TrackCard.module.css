@@ -1,0 +1,72 @@
+.area {
+  position: relative;
+  display: inline-block;
+  width: 219px;
+  height: 219px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: var(--card-box-shadow);
+  overflow: hidden;
+}
+
+.cover {
+  position: relative;
+  width: 219px;
+  height: 219px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.description {
+  width: calc(var(--card-width) - 219px);
+  height: 219px;
+  padding: 20px;
+  color: rgba(0, 0, 0, 1);
+}
+
+.albumArt {
+  width: 100%;
+  height: 100%;
+}
+
+.Info {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background-color: var(--card-background-color);
+  text-shadow: var(--card-text-shadow);
+  box-shadow: var(--card-box-shadow);
+}
+
+.artist {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.playButton {
+  opacity: var(--card-hover-default-opacify);
+  position: absolute;
+  top: calc(50% - (var(--card-playButton-size) / 2));
+  left: calc(50% - (var(--card-playButton-size) / 2));
+  width: var(--card-playButton-size);
+  height: var(--card-playButton-size);
+  border: 0;
+  background: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.playButton:hover {
+  opacity: var(--card-hover-opacify);
+  transition: var(--card-hover-transition);
+}
+
+.playButton > img {
+  width: 100%;
+  height: 100%;
+}
