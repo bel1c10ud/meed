@@ -20,6 +20,7 @@ export default function TrackCard({ trackId }:{ trackId: string }) {
           name
         }
         album {
+          name
           images {
             url
           }
@@ -43,16 +44,14 @@ export default function TrackCard({ trackId }:{ trackId: string }) {
       <div className={styles.cover}>
         <img className={styles.albumArt} alt="album art" src={data && data.getTrack.album.images[1].url} />
         <div className={styles.Info}>
-          <p className={styles.title}>
-            { data && data.getTrack.name }
-          </p>
-          <p className={styles.artist}>
-            { data && data.getTrack.artists.map((artist: Artist) => <span>{artist.name}</span>)}
-          </p>
         </div> 
         <button className={styles.playButton} onClick={addPlaylist}>
           <img alt="play" src="/svg/playCard.svg" />
         </button>
+      </div>
+      <div className={styles.trackInfo}>
+        <p className={styles.title}>{ data && data.getTrack.name}</p>
+        <p className={styles.artists}>{ data && data.getTrack.artists.map((artist: Artist) => artist.name).join(', ')}</p>
       </div>
     </article>
   )

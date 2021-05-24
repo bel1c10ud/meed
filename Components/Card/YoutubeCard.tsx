@@ -5,7 +5,7 @@ import { request } from 'graphql-request';
 import { Artist } from './../../types';
 
 import { useSetRecoilState } from 'recoil';
-import { modalState } from './../../recoilStates';
+import { modalState, playerState } from './../../recoilStates';
 
 import YoutubeModal from './../YoutubeModal';
 
@@ -15,6 +15,7 @@ import styles from './YoutubeCard.module.css';
 export default function YoutubeCard({ videoId, trackId } : { videoId: string, trackId: string }) {
 
   const setModal = useSetRecoilState(modalState);
+  const setPlayer = useSetRecoilState(playerState);
 
   const fetcher = (query: string) => request('/api/graphql', query);
   
@@ -31,6 +32,7 @@ export default function YoutubeCard({ videoId, trackId } : { videoId: string, tr
 
   const openYoutubeModal = () => {
     setModal(() => ({ isModal: true, component: YoutubeModal, props: { id: videoId } }));
+    setPlayer(state => ({ ...state, status: "PAUSE" }))
   }
 
   return (

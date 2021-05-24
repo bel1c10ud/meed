@@ -1,6 +1,7 @@
 .area {
   width: 1140px;
   margin: 0 auto;
+  margin-top: 30px;
   margin-bottom: 100px;
   padding-bottom: 30px;
 }
@@ -23,7 +24,7 @@
 }
 
 .feedTypes {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .feedTypes > .feedType {

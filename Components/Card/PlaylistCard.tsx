@@ -55,8 +55,16 @@ export default function PlaylistCard({ playlistId }:{ playlistId: string }) {
 
   return (
     <article className={styles.area}>
-      <img className={styles.playlistCover} alt="album art" src={data && data.getPlaylist.images[0].url} />
+      <img className={styles.playlistCover} alt="playlist cover" src={data && data.getPlaylist.images[0].url} />
       <div className={styles.Info}>
+        <p className={styles.trackCount}>
+        { data && `${data.getPlaylist.tracks.items.length} 트랙` }
+        </p>
+      </div>
+      <button className={styles.playButton} onClick={addPlaylist}>
+        <img alt="play" src="/svg/playCard.svg" />
+      </button>
+      <div className={styles.playlistInfo}>
         <p className={styles.title}>
           { data && data.getPlaylist.name }
         </p>
@@ -64,9 +72,6 @@ export default function PlaylistCard({ playlistId }:{ playlistId: string }) {
           { data && data.getPlaylist.owner.display_name }
         </p>
       </div>
-      <button className={styles.playButton} onClick={addPlaylist}>
-        <img alt="play" src="/svg/playCard.svg" />
-      </button>
     </article>
   )
 }

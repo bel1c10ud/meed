@@ -1,7 +1,6 @@
-import { Resolvers } from '@apollo/client';
 import axios from 'axios';
 import cheerio from 'cheerio';
-import { GraphQLArgs, GraphQLArgument, GraphQLFieldConfigArgumentMap, GraphQLFieldResolver, GraphQLResolveInfo } from 'graphql';
+import { GraphQLFieldConfigArgumentMap, GraphQLResolveInfo } from 'graphql';
 import { GraphQLRequestContext } from 'graphql-request/dist/types';
 import { GraphQLParseOptions, IResolvers } from 'graphql-tools';
 
@@ -23,7 +22,6 @@ export const resolvers: IResolvers = {
           market: "KR"
         },
       });
-      // console.log(data);
       return data;
     },
     getPlaylist: async (parent: GraphQLParseOptions, args: GraphQLFieldConfigArgumentMap, context: GraphQLRequestContext, info: GraphQLResolveInfo) => {
@@ -42,7 +40,6 @@ export const resolvers: IResolvers = {
           market: "KR"
         },
       });
-      console.log(data);
       return data;
     },
     getAlbum: async (parent: GraphQLParseOptions, args: GraphQLFieldConfigArgumentMap, context: GraphQLRequestContext, info: GraphQLResolveInfo) => {
@@ -61,7 +58,6 @@ export const resolvers: IResolvers = {
           market: "KR"
         },
       });
-      console.log(data);
       return data;
     },
     getMelonAlbumData: async (parent: GraphQLParseOptions, args: GraphQLFieldConfigArgumentMap, context: GraphQLRequestContext, info: GraphQLResolveInfo) => {

@@ -1,24 +1,23 @@
 .area {
   position: relative;
   display: inline-block;
-  width: 219px;
+  width: 170px;
   height: 219px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: var(--card-box-shadow);
-  overflow: hidden;
 }
 
 .cover {
   position: relative;
-  width: 219px;
-  height: 219px;
+  width: 170px;
+  height: 170px;
+  border-radius: 10px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 1);
+  box-shadow: var(--card-box-shadow);
 }
 
 .description {
-  width: calc(var(--card-width) - 219px);
-  height: 219px;
+  width: calc(var(--card-width) - 170px);
+  height: 170px;
   padding: 20px;
   color: rgba(0, 0, 0, 1);
 }
@@ -39,16 +38,11 @@
   box-shadow: var(--card-box-shadow);
 }
 
-.artist {
+.artist,
+.album {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.8);
 }
-
-.title {
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
 .playButton {
   opacity: var(--card-hover-default-opacify);
   position: absolute;
@@ -69,4 +63,20 @@
 .playButton > img {
   width: 100%;
   height: 100%;
+}
+
+.trackInfo {
+  margin-top: 5px;
+}
+
+.trackInfo > .title {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.trackInfo > .artists {
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.5);
 }

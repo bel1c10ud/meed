@@ -1,7 +1,6 @@
 .area {
   display: block;
   height: 32px;
-  /* width: 200px; */
   margin: 8px 0;
 }
 
@@ -41,14 +40,13 @@
 }
 
 .trackInfo {
-  width: 90px;
+  width: 110px;
 }
 
 .trackInfo .title,
 .trackInfo .artist {
   font-size: 0.75rem;
   line-height: initial;
-  /* line-height: 120%; */
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;

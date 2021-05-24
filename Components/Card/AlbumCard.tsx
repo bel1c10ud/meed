@@ -48,8 +48,8 @@ ${ melonAlbumId ?  `
   }
 
   const albumStyle = {
-    width: (width ?? "219") + "px",
-    "--card-width": (width ?? "219") + "px"
+    width: (width ?? "170") + "px",
+    "--card-width": (width ?? "170") + "px"
   }
 
   return (
@@ -62,11 +62,8 @@ ${ melonAlbumId ?  `
         <div className={styles.Info}>
 { melonAlbumId === undefined && 
         <>
-          <p className={styles.title}>
-            { data && data.getAlbum.name }
-          </p>
-          <p className={styles.artist}>
-            { data && data.getAlbum.artists.map((artist: Artist) => <span>{artist.name}</span>)}
+          <p className={styles.trackCount}>
+            { data && `${data.getAlbum.tracks.items.length} 트랙` }
           </p>
         </>
 }
@@ -75,13 +72,21 @@ ${ melonAlbumId ?  `
           <img alt="play" src="/svg/playCard.svg" />
         </button>
       </div>
-{ melonAlbumId && 
+{ melonAlbumId ?
       <div className={styles.description}>
         <div className={styles.body}>
           <p className={styles.title}>{ data && data.getAlbum.name }</p>
           <p className={styles.artist}>{ data && data.getAlbum.artists.map((artist: Artist) => <span>{artist.name}</span>) }</p>
           <p className={styles.text}>{ data && data.getMelonAlbumData.description }</p>
         </div>
+      </div>
+    : <div className={styles.albumInfo}>
+        <p className={styles.title}>
+          {data && data.getAlbum.name}
+        </p>
+        <p className={styles.artists}>
+          {data && data.getAlbum.artists.map((artist: Artist) => artist.name).join(', ')}
+        </p>
       </div>
 }
     </article>

@@ -1,50 +1,43 @@
 .area {
   position: relative;
   display: inline-block;
-  width: 219px;
-  height: 219px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 1);
-  overflow: hidden;
-  color: rgba(255, 255, 255, 1);
+  width: 170px;
+  /* height: 170px; */
+  /* background-color: rgba(255, 255, 255, 1); */
+  /* color: rgba(255, 255, 255, 1); */
 }
 
 .playlistCover {
-  width: 100%;
-  height: 100%;
+  width: 170px;
+  height: 170px;
+  border-radius: 10px;
 }
 
 .Info {
   position: absolute;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  width: 170px;
+  height: 170px;
   padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
   background-color: var(--card-background-color);
   text-shadow: var(--card-text-shadow);
   box-shadow: var(--card-box-shadow);
 }
 
-.title {
-  width: 100%;
-  line-height: 1.2em;
-  /* white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow-x: hidden; */
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
-.owner {
-  font-size: 0.875rem;
+.trackCount {
+  font-size: 0.5rem;
   color: rgba(255, 255, 255, 0.75);
 }
+
+
 
 .playButton {
   opacity: var(--card-hover-default-opacify);
   position: absolute;
-  top: calc(50% - (var(--card-playButton-size) / 2));
-  left: calc(50% - (var(--card-playButton-size) / 2));
+  top: calc(85px - (var(--card-playButton-size) / 2));
+  left: calc(85px - (var(--card-playButton-size) / 2));
   width: var(--card-playButton-size);
   height: var(--card-playButton-size);
   border: 0;
@@ -60,4 +53,20 @@
 .playButton > img {
   width: 100%;
   height: 100%;
+}
+
+.playlistInfo {
+  height: 49px;
+}
+
+.playlistInfo .title {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlistInfo .owner {
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.5);
 }

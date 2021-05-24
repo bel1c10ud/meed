@@ -32,9 +32,8 @@ export default function Player() {
 
   const playPause = () => {
     if(audioElement && audioElement.current) {
-      if(player.status === "PLAYING") audioElement.current.pause();
-      else if(player.status === "PAUSE") audioElement.current.play();
-      console.log(audioElement.current.paused);
+      if(!(audioElement.current.paused)) audioElement.current.pause();
+      else if(audioElement.current.paused) audioElement.current.play();
     }
   };
 
@@ -134,10 +133,6 @@ export default function Player() {
     } 
   }, [playlist]);
 
-  useEffect(() => { // playing id가 변경되면 상태 초기화
-    setPlayer(state => ({ ...state, status: "PAUSE" }));
-  },[playlist.playingId]);
-
   useEffect(() => { // playingTrack이 변경되면
     if(playingTrack?.preview_url) {
       return playPause();
@@ -169,13 +164,17 @@ export default function Player() {
     }
   }, [player.volume]);
 
-  useEffect(() => {
-    console.log('audioElement: ', audioElement.current);
-  }, [audioElement.current]);
+  useEffect(() => { // player status
+    if(audioElement.current) {
+      if(player.status === "PAUSE" && (audioElement.current.paused === false)) {
+        audioElement.current.pause();
+      }
+    }
+  }, [player.status]);
 
   return (
     <section className={styles.area}>
-{ playingTrack && 
+{ playingTrack && player.status === "PLAYING" &&
       <Head>
         <title>
           { `${playingTrack.name} · ${playingTrack.artists.map(artist => artist.name).join(", ")}` }
@@ -194,7 +193,7 @@ export default function Player() {
       <div className={styles.container}>
         <div className={styles.track}>
         { playingTrack ? 
-          <img className={styles.albumArt} alt="album art" src={playingTrack.album.images[2].url} /> 
+          <img className={styles.albumArt} alt="album art" src={playingTrack.album.images[2]?.url ?? ""} /> 
         : <div className={styles.albumArt}></div> 
         }
           <div className={styles.trackInfo}>
@@ -209,7 +208,10 @@ export default function Player() {
         <div className={styles.controls}>
           <div className={styles.buttons}>
             <button onClick={() => setPlayer(state => ({ ...state, isLoop: !(state.isLoop) }))}>
-              { player.isLoop ? "loop" : "!loop"}
+{ player.isLoop ? 
+              <img alt="loop on" src="/svg/loop.svg" /> 
+            : <img alt="loop off" src="/svg/loopOff.svg" />
+}
             </button>
             <button 
             onClick={() => changePlayingId("prev")}
@@ -227,7 +229,10 @@ export default function Player() {
               <img alt="next" src="/svg/next.svg" />
             </button>
             <button onClick={() => setPlayer(state => ({ ...state, isShuffle: !(state.isShuffle) }))}>
-              { player.isShuffle ? "shuffle" : "!shuffle" }
+{ player.isShuffle ?
+              <img alt="shuffle on" src="/svg/shuffle.svg" /> 
+            : <img alt="shuffle off" src="/svg/shuffleOff.svg" /> 
+}
             </button>
           </div>
           <div className={styles.playbackProgress}>

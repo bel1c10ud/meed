@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className={styles.area}>
       <Modal />
-      <Navigation />
+      {/* <Navigation /> */}
       <Feed />
       <Player />
     </div>
