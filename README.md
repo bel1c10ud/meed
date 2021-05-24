@@ -9,5 +9,5 @@ Recoil
 GraphQL
 
 ### Data
-Spotify API
+Spotify API (track preview)
 melon (앨범 설명 파싱)
